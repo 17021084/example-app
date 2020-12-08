@@ -5,9 +5,10 @@ class ApplicationController < ActionController::Base
      protected
     def configure_permitted_parameters
         # sign_upのときに、name, ageを許可する
-        devise_parameter_sanitizer.permit :sign_up, keys: [:name, :age]
+        devise_parameter_sanitizer.permit :sign_up, keys: [:name, :age, :avatar]
          # account_updateのときに、name,ageを許可する
-        devise_parameter_sanitizer.permit :account_update, keys: [:name, :age]
+        devise_parameter_sanitizer.permit :account_update, keys: [:name, :age, :avatar]
         
     end
+
 end
